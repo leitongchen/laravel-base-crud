@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgb(46, 112, 114); 
+    --secondary-color: rgb(21, 57, 78); 
+    --neutral-color: white; 
+
+    --font-family: 'helvetica', sans-serif; 
+    --font-size: 14px; 
+
+    --line-height: 2; 
+
+    --spacing: 20px; 
+
+    --transition: .3s; 
+}
+
+/* COMMON CLASSES */
+
+body {
+    font-family: var(--font-family);
+}
+
+.container {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+
+    display: inline-block;
+}
+
+
+/* HEADER */
+
+header {
+
+    border-bottom: 5px solid var(--main-color);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: var(--spacing) 0;
+
+}
+
+header .logo-container {
+    max-width: 50px;
+}
+
+header .logo-container img {
+    width: 100%;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header a {
+    padding: 1rem;
+
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: bold;
+}
+
+header a:hover {
+    background-color: var(--secondary-color);
+    color: var(--neutral-color);
+    transition: var(--transition);
+}
+
+header .jumbotron {
+    width: 100%;
+    height: 250px;
+    max-height: 20vh;
+}
+
+header .jumbotron img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+
+/* MAIN */
+
+/* index */
+
+main {
+    padding: var(--spacing) 0;
+}
+
+main table {
+    width: 100%;
+
+    margin: var(--spacing) 0;
+    border-collapse: collapse;
+}
+
+main table a {
+    background-color: var(--main-color);
+    color: var(--neutral-color);
+
+    padding: .5rem;
+    border-radius: 20px;
+    margin: 5px 0;
+}
+
+main table thead tr {
+    background-color: var(--main-color);
+
+}
+
+main table th {
+    color: var(--neutral-color);
+
+    text-align: left;
+
+    text-transform: uppercase;
+    font-size: .75rem;
+    line-height: 3;
+
+    padding-left: 3px;
+}
+
+main table tr {
+    line-height: var(--line-height);
+
+    font-size: .75rem;
+}
+
+main table td {
+    border-bottom: 1px solid var(--main-color);
+}
+
+main table td:last-child {
+    text-align: right;
+}
+
