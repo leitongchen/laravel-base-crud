@@ -32,7 +32,7 @@
                     <td>{{ $comic->sale_date }}</td>
                     <td>€ {{ $comic->price }}</td>
 
-                    <td><a href="{{ route('comics.show', $comic->id) }}">Dettagli...</a></td>
+                    <td><a href="{{ route('comics.show', $comic->id) }}">Dettagli</a></td>
                 </tr>
                 @endforeach
             </tbody>
