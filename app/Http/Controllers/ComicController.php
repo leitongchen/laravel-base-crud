@@ -42,15 +42,15 @@ class ComicController extends Controller
 
         $newComic = new Comic(); 
 
-        $newComic->title = $newComicData['title'];
-        $newComic->series = $newComicData['series'];
-        $newComic->type = $newComicData['type'];
-        $newComic->sale_date = $newComicData['sale_date'];
-        $newComic->price = $newComicData['price'];
-        $newComic->description = $newComicData['description'];
-        $newComic->thumb = $newComicData['thumb'];
+        // $newComic->title = $newComicData['title'];
+        // $newComic->series = $newComicData['series'];
+        // $newComic->type = $newComicData['type'];
+        // $newComic->sale_date = $newComicData['sale_date'];
+        // $newComic->price = $newComicData['price'];
+        // $newComic->description = $newComicData['description'];
+        // $newComic->thumb = $newComicData['thumb'];
 
-        // $newComic->fill($newComicData);
+        $newComic->fill($newComicData);
         $newComic->save();
 
         return redirect()->route('comics.show', $newComic->id);
@@ -65,9 +65,9 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        $comic = Comic::find($id);
+        $comic = Comic::findOrFail($id);
 
-        return view('/comics.show', [
+        return view('comics.show', [
             'comic' => $comic
         ]);
     }
@@ -80,7 +80,11 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        return view('comics.edit', [
+            'comic' => $comic,
+        ]);
     }
 
     /**
@@ -92,7 +96,21 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $comicData = $request->all();
+
+        // $comic->title = $comicData['title'];
+        // $comic->series = $comicData['series'];
+        // $comic->type = $comicData['type'];
+        // $comic->sale_date = $comicData['sale_date'];
+        // $comic->price = $comicData['price'];
+        // $comic->description = $comicData['description'];
+        // $comic->thumb = $comicData['thumb'];
+        // $comic->save();
+        
+        $comic->update($comicData);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
@@ -103,6 +121,10 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }

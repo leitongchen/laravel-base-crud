@@ -20,7 +20,8 @@
         <li>PRICE: €{{ $comic->price }}</li>
 
     </ul>
-
+    
+    <a href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
     <a href="{{ route('comics.create') }}">Create new record</a>
-
+    @include('partials.components.deleteBtn', ["id"=> $comic->id])
 @endsection

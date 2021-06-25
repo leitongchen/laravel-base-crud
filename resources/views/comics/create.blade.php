@@ -30,7 +30,7 @@
         <label for="thumb">Url picture</label>
         <input type="text" name="thumb" id="thumb">
 
-        <input type="submit" value="Invia">
+        <input type="submit" value="Send">
 
     </form>
 

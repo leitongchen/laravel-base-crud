@@ -5,40 +5,47 @@
 
 @section('content')
 
-    <div class="container">
+    {{-- <a href="{{ route('comics.create') }}">Create new record</a> --}}
 
-        {{-- <a href="{{ route('comics.create') }}">Create new record</a> --}}
+    <table>
 
-        <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Type</th>
+                <th>Sale date</th>
+                <th>Price</th>
+                <th></th>
 
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Title</th>
-                    <th>Type</th>
-                    <th>Sale date</th>
-                    <th>Price</th>
-                    <th></th>
 
-                </tr>
-            </thead>
 
-            <tbody>
-                @foreach($comics as $comic)
-                <tr>
-                    <td><strong>{{ $comic->id }}</strong></td>
-                    <td>{{ $comic->title }}</td>
-                    <td>{{ $comic->type }}</td>
-                    <td>{{ $comic->sale_date }}</td>
-                    <td>€ {{ $comic->price }}</td>
+            </tr>
+        </thead>
 
-                    <td><a href="{{ route('comics.show', $comic->id) }}">Dettagli</a></td>
-                </tr>
-                @endforeach
-            </tbody>
+        <tbody>
+            @foreach($comics as $comic)
+            <tr>
+                <td><strong>{{ $comic->id }}</strong></td>
+                <td>{{ $comic->title }}</td>
+                <td>{{ $comic->type }}</td>
+                <td>{{ $comic->sale_date }}</td>
+                <td>€ {{ $comic->price }}</td>
 
-        </table>
+                <td>
+                    <a href="{{ route('comics.show', $comic->id) }}">Dettagli</a>
 
-    </div>
+                    <a href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
+
+                    @include('partials.components.deleteBtn', ["id"=> $comic->id])
+                </td>
+
+            </tr>
+            @endforeach
+        </tbody>
+
+    </table>
+
+    
 
 @endsection
