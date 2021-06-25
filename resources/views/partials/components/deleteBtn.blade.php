@@ -1,4 +1,4 @@
-<form action="{{ route('comics.destroy', $id) }}" method="post">
+<form class="delete-btn" action="{{ route('comics.destroy', $id) }}" method="post">
     @csrf
 
     @method("DELETE")

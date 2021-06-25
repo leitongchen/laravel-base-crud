@@ -5,7 +5,13 @@
 
 @section('content')
 
-    {{-- <a href="{{ route('comics.create') }}">Create new record</a> --}}
+    <div class="cta-upper">
+
+        <span></span>
+
+        <a class="btn" href="{{ route('comics.create') }}">Create new record</a>
+
+    </div>
 
     <table>
 
@@ -17,9 +23,6 @@
                 <th>Sale date</th>
                 <th>Price</th>
                 <th></th>
-
-
-
             </tr>
         </thead>
 
@@ -33,9 +36,9 @@
                 <td>€ {{ $comic->price }}</td>
 
                 <td>
-                    <a href="{{ route('comics.show', $comic->id) }}">Dettagli</a>
+                    <a class="btn" href="{{ route('comics.show', $comic->id) }}">Details</a>
 
-                    <a href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
+                    <a class="btn" href="{{ route('comics.edit', $comic->id) }}">Modify</a>
 
                     @include('partials.components.deleteBtn', ["id"=> $comic->id])
                 </td>

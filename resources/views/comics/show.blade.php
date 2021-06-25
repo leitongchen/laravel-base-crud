@@ -5,23 +5,37 @@
 
 @section('content')
 
-    <a href="{{ route('comics.index') }}">Back to overview</a>
+    @include('partials.components.cta')
 
+    <h1>{{ $comic->title }}</h1>
 
-    <h1>COMIC BOOK DETAILS</h1>
-    <ul>
+    <div class="comic-box">
+        <div class="cover-container">
+            <img src="{{$comic->thumb}}" alt="">
 
-        <li>ID: {{ $comic->id }}</li>
-        <li>TITLE: {{ $comic->title }}</li>
-        <li>DESCRIPTION: {{ $comic->description }}</li>
-        <li>SERIES: {{ $comic->series }}</li>
-        <li>TYPE: {{ $comic->type }}</li>
-        <li>SALE DATE: {{ $comic->sale_date }}</li>
-        <li>PRICE: €{{ $comic->price }}</li>
+            <ul>
+                <li>SALE DATE: <strong>{{ $comic->sale_date }}</strong></li>
+                <li>PRICE: <strong>€{{ $comic->price }}</strong></li>
+            
+            </ul>
 
-    </ul>
+            <div class="cta-below">
+                <a class="btn" href="{{ route('comics.edit', $comic->id) }}">Modify</a>
+                @include('partials.components.deleteBtn', ["id"=> $comic->id])
+            </div>
+        </div>
+
+        <div class="desc-box">
+            <ul>
+
+                <li>ID: <strong>{{ $comic->id }}</strong></li>
+                <li>DESCRIPTION: <br>{{ $comic->description }}</li>
+                <li>SERIES: <strong>{{ $comic->series }}</strong></li>
+                <li>TYPE: <strong>{{ $comic->type }}</strong></li>
+                
+
+            </ul>
+        </div>
+    </div>
     
-    <a href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
-    <a href="{{ route('comics.create') }}">Create new record</a>
-    @include('partials.components.deleteBtn', ["id"=> $comic->id])
 @endsection
