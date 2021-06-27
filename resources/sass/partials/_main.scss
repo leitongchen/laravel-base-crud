@@ -46,9 +46,10 @@ main {
     // Comic single page
     .comic-box {
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-start;
 
         ul li {
+            list-style: none;
             line-height: $line-height;
             font-size: $font-size;
             margin-bottom: .7rem;

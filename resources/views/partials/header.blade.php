@@ -16,7 +16,10 @@
                     <a href="{{ route('comics.index') }}">Comics</a>
                 </li>
                 <li>
-                    <a href="{{ route('comics.create') }}">New record</a>
+                    <a href="#">Movies</a>
+                </li>
+                <li>
+                    <a href="#">Videogames</a>
                 </li>
             
             </ul>

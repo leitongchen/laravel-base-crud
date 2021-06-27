@@ -6,6 +6,8 @@
 @section('content')
     @include('partials.components.cta')
 
+    @include("partials.components.errorsAlert")
+
     <form action="{{ route('comics.update', $comic->id) }}" method="post">
         @csrf
         @method('put')
@@ -30,7 +32,7 @@
             </div>
             <div class="input-field">
                 <label for="price">Price</label>
-                <input type="number" name="price" id="price" step=".01" value="{{ $comic->price }}" placeholder="100.00">
+                <input type="text" name="price" id="price" value="{{ $comic->price }}" placeholder="100.00">
             </div>
             <div class="input-field">
                 <label for="thumb">Url picture</label>

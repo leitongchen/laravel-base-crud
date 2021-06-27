@@ -13,9 +13,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
+        $comics = Comic::orderBy('title', "ASC")->get();
 
-        return view('/comics.index', [
+        return view('comics.index', [
             'comics' => $comics
         ]); 
     }
@@ -42,6 +42,15 @@ class ComicController extends Controller
 
         $newComic = new Comic(); 
 
+        $request->validate([
+            'title' => 'required|max:255', 
+            'series' => 'required|max:255', 
+            'type' => 'nullable|max:40', 
+            'sale_date' => 'nullable|date', 
+            'price' => 'required', 
+            'description' => 'nullable', 
+            'thumb' => 'required',
+        ]);
         // $newComic->title = $newComicData['title'];
         // $newComic->series = $newComicData['series'];
         // $newComic->type = $newComicData['type'];
@@ -80,7 +89,11 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        $comic = Comic::findOrFail($id);
+        $comic = Comic::find($id);
+
+        if (is_null($id)) {
+            abort(404, 'Pagina non esistente');
+        }
 
         return view('comics.edit', [
             'comic' => $comic,
@@ -100,14 +113,15 @@ class ComicController extends Controller
 
         $comicData = $request->all();
 
-        // $comic->title = $comicData['title'];
-        // $comic->series = $comicData['series'];
-        // $comic->type = $comicData['type'];
-        // $comic->sale_date = $comicData['sale_date'];
-        // $comic->price = $comicData['price'];
-        // $comic->description = $comicData['description'];
-        // $comic->thumb = $comicData['thumb'];
-        // $comic->save();
+        $request->validate([
+            'title' => 'required|max:255', 
+            'series' => 'required|max:255', 
+            'type' => 'nullable|max:40', 
+            'sale_date' => 'nullable|date', 
+            'price' => 'required|regex:/^\d+(\.\d{1,2})?$/', 
+            'description' => 'nullable', 
+            'thumb' => 'required',
+        ]);
         
         $comic->update($comicData);
         return redirect()->route('comics.show', $comic->id);

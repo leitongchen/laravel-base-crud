@@ -1,0 +1,14 @@
+.error-alert {
+
+    background-color: $danger-color;
+    color: $neutral-color-100;
+
+    padding: $spacing;
+    border-radius: 1rem;
+
+    font-size: $el-font-size;
+
+    list-style: inside;
+
+    margin: $spacing 0;
+}

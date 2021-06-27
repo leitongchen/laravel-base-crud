@@ -15,10 +15,6 @@ body {
   margin: 0 auto;
 }
 
-ul li {
-  list-style: none;
-}
-
 a {
   text-decoration: none;
   color: #15394e;
@@ -129,6 +125,16 @@ form .input-field-area label {
   margin: 20px 0;
 }
 
+.error-alert {
+  background-color: #c26b5e;
+  color: white;
+  padding: 20px;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  list-style: inside;
+  margin: 20px 0;
+}
+
 header {
   border-bottom: 5px solid var(--main-color);
 }
@@ -220,10 +226,11 @@ main table tbody td:last-child {
 
 main .comic-box {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 main .comic-box ul li {
+  list-style: none;
   line-height: 2;
   font-size: 0.8rem;
   margin-bottom: 0.7rem;
