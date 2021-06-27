@@ -1,282 +1,244 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-:root {
-    --main-color: rgb(46, 112, 114); 
-    --secondary-color: rgb(21, 57, 78); 
-    --neutral-color: white; 
-
-    --danger-color: rgb(194, 107, 94); 
-
-    --font-family: 'helvetica', sans-serif; 
-    --font-size: 14px; 
-
-    --line-height: 2; 
-
-    --spacing: 20px; 
-
-    --transition: .3s; 
-}
-
-/* COMMON CLASSES */
 
 body {
-    font-family: var(--font-family);
-    color: var(--secondary-color);
+  font-family: "helvetica", sans-serif;
+  color: #15394e;
 }
 
 .container {
-    width: 100%;
-    max-width: 920px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
 }
 
 ul li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
-    color: var(--secondary-color);
-
-    display: inline-block;
+  text-decoration: none;
+  color: #15394e;
+  display: inline-block;
 }
 
+h1 {
+  margin: 20px 0;
+}
 
 /* buttons style */
-.btn,
-form.delete-btn input {
 
-    background-color: var(--main-color);
-    color: var(--neutral-color);
-
-    padding: .3rem .8rem;
-    border-radius: 5px;
-    margin: 10px 0;
-
-
-}
-
-.btn, form.delete-btn input,
-.link {
-    font-size: .8rem;
-}
-
-/* Delete buttons */
 form.delete-btn {
-    display: inline-block;
+  display: inline-block;
+  /* input delete buttons reset and style */
 }
 
-/* input delete buttons reset and style */
 form.delete-btn input {
-    border: 0; 
-    cursor: pointer;
-    line-height: 1.2;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  margin: 10px 0;
+  border: 0;
+  line-height: 1.2;
+  background-color: #c26b5e;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
 
-    background-color: var(--danger-color);
+a.btn {
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: #2e7072;
 }
 
 a.link {
-    text-decoration: underline;
-    font-weight: bold;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 a.link:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-
-/* ************ form */
+.btn,
+.link {
+  font-size: 0.8rem;
+}
 
 form .input-container {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+form input,
+form .btn {
+  width: 100%;
+  line-height: 2;
+  padding: 5px;
+}
+
+form textarea {
+  width: 100%;
+  padding: 5px;
 }
 
 form .input-field {
-    width: 50%;
+  width: 50%;
+}
+
+form .input-field-area {
+  width: 100%;
+}
+
+form .input-field-area .btn {
+  border: 0;
+  color: white;
+}
+
+form .input-field-area .submit {
+  cursor: pointer;
+  background-color: #2e7072;
+}
+
+form .input-field-area .cancel {
+  text-align: center;
+  background-color: #b9b9b9;
 }
 
 form .input-field,
 form .input-field-area {
-    padding: 0 .5rem;
-
-    margin-bottom: var(--spacing);
+  padding: 0 0.5rem;
+  margin-bottom: 20px;
 }
 
-form .input-field-area {
-    width: 100%;
-}
-
-form label {
-    text-transform: uppercase;
-    font-size: .75rem;
-    font-weight: bold;
-
-}
-
-.input-field-area .btn {
-    border: 0;
-}
-
-form input {
-    width: 100%;
-    line-height: var(--line-height);
-
-    padding: 5px;
-}
-
-form .submit {
-    cursor: pointer;
-}
-
-form textarea {
-    width: 100%;
-    padding: 5px;
-}
-
-
-
-/* HEADER */
-
-header {
-
-    border-bottom: 5px solid var(--main-color);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: var(--spacing) 0;
-}
-
-header .logo-container {
-    max-width: 50px;
-}
-
-header .logo-container img {
-    width: 100%;
-}
-
-header nav ul li {
-    display: inline-block;
-}
-
-header a {
-    padding: 1rem;
-
-    text-transform: uppercase;
-    font-size: .75rem;
-    font-weight: bold;
-}
-
-header a:hover {
-    background-color: var(--main-color);
-    color: var(--neutral-color);
-    transition: var(--transition);
-}
-
-header .jumbotron {
-    width: 100%;
-    height: 250px;
-    max-height: 20vh;
-}
-
-header .jumbotron img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
-}
-
-
-/* MAIN */
-
-/* ************ index */
-
-main {
-    padding: var(--spacing) 0;
-}
-
-main table {
-    width: 100%;
-
-    margin: var(--spacing) 0;
-    border-collapse: collapse;
-}
-
-main table thead tr {
-    background-color: var(--main-color);
-
-}
-
-main table th {
-    color: var(--neutral-color);
-
-    text-align: left;
-
-    text-transform: uppercase;
-    font-size: .75rem;
-    line-height: 3;
-}
-
-main table th:first-child {
-    padding-left: 3px;
-}
-
-main table tr {
-    font-size: .75rem;
-}
-
-main table td {
-    border-bottom: 1px solid var(--main-color);
-}
-
-main table td:last-child {
-    text-align: right;
-}
-
-
-
-
-/* ************ show */
-.comic-box {
-    display: flex;
-    justify-content: space-around;
-}
-
-h1 {
-    margin: var(--spacing) 0;
-}
-
-.comic-box .cover-container {
-    min-width: 200px;
-    margin-right: var(--spacing);
-}
-
-.comic-box .cover-container img {
-    width: 100%;
-}
-
-.comic-box .desc-box {
-    padding: 0 var(--spacing);
-}
-
-.comic-box ul li {
-    line-height: var(--line-height);
-    font-size: var(--font-size);
-    margin-bottom: .7rem;
+form .input-field label,
+form .input-field-area label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
 }
 
 .cta-upper {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
 
-    margin: var(--spacing) 0;
+header {
+  border-bottom: 5px solid var(--main-color);
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+header .logo-container {
+  max-width: 50px;
+}
+
+header .logo-container img {
+  width: 100%;
+}
+
+header nav ul li {
+  display: inline-block;
+}
+
+header nav ul li a {
+  padding: 1rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+header nav ul li a:hover {
+  background-color: #2e7072;
+  color: white;
+  transition: 0.3s;
+}
+
+header .jumbotron {
+  width: 100%;
+  height: 250px;
+  max-height: 20vh;
+}
+
+header .jumbotron img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+main {
+  padding: 20px 0;
+}
+
+main table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+main table tr {
+  font-size: 0.75rem;
+}
+
+main table thead {
+  background-color: #2e7072;
+}
+
+main table thead th {
+  color: white;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 3;
+}
+
+main table thead th:first-child {
+  padding-left: 3px;
+}
+
+main table tbody td {
+  border-bottom: 1px solid #2e7072;
+}
+
+main table tbody td:last-child {
+  text-align: right;
+}
+
+main .comic-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+main .comic-box ul li {
+  line-height: 2;
+  font-size: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+main .comic-box .cover-container {
+  min-width: 200px;
+  margin-right: 20px;
+}
+
+main .comic-box .cover-container img {
+  width: 100%;
+}
+
+main .comic-box .desc-box {
+  padding: 0 20px;
 }
 

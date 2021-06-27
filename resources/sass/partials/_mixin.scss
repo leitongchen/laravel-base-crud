@@ -1,0 +1,12 @@
+@mixin btn-style {
+    color: $neutral-color-100;
+
+    padding: .3rem .8rem;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+}

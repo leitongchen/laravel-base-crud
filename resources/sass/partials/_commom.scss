@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: $font-family;
+    color: $secondary-color;
+}
+
+.container {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+
+// LISTS STYLE
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $secondary-color;
+
+    display: inline-block;
+}
+
+
+// TITLES STYLE
+
+h1 {
+    margin: $spacing 0;
+}

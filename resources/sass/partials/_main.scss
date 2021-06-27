@@ -1,0 +1,71 @@
+main {
+    padding: $spacing 0;
+
+    // Table on index page
+    table {
+        width: 100%;
+    
+        margin: $spacing 0;
+        border-collapse: collapse;
+
+        tr {
+            font-size: $el-font-size;
+        }
+
+        thead {
+            background-color: $main-color;
+        
+            th {
+                color: $neutral-color-100;
+            
+                text-align: left;
+            
+                text-transform: uppercase;
+                font-size: $el-font-size;
+                line-height: 3;
+
+                &:first-child {
+                    padding-left: 3px;
+                }
+            }
+        }
+
+        tbody {
+
+            td {
+                border-bottom: 1px solid $main-color;
+
+                &:last-child {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+
+    // Comic single page
+    .comic-box {
+        display: flex;
+        justify-content: space-around;
+
+        ul li {
+            line-height: $line-height;
+            font-size: $font-size;
+            margin-bottom: .7rem;
+        }
+
+        .cover-container {
+            min-width: 200px;
+            margin-right: $spacing;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .desc-box {
+            padding: 0 $spacing;
+        }
+    }
+
+}

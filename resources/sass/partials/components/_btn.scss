@@ -1,0 +1,52 @@
+/* buttons style */
+
+form {
+
+    // DELETE BTN inside form
+    &.delete-btn {
+        display: inline-block;
+
+
+        /* input delete buttons reset and style */
+        input {
+
+            @include btn-style;
+
+            border: 0; 
+            line-height: 1.2;
+            background-color: $danger-color;
+
+            cursor: pointer;
+
+            font-size: $el-font-size;
+        }
+    }
+}
+
+
+// cta buttons 
+a {
+    &.btn {
+        @include btn-style;
+        background-color: $main-color;
+    }
+}
+
+
+// LINK WITH UNDERLINE STYLE
+a {
+    &.link {
+        text-decoration: underline;
+        font-weight: bold;
+
+        &:hover {
+            font-weight: bold; 
+        }
+    }
+}
+
+
+.btn,
+.link {
+    font-size: .8rem;
+}
