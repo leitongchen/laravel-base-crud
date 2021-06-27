@@ -7,6 +7,8 @@
     {{-- stylesheet --}}
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
+    <script src={{asset('js/app.js')}}></script>
+
     <title>Comics Shop @yield('page_title')</title>
 </head>
 <body>
@@ -21,5 +23,6 @@
     
     </main>
 
+    {{-- <script src="{{asset('js/app.js')}}"></script> --}}
 </body>
 </html>

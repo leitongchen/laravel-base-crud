@@ -5,8 +5,6 @@
 @section('content')
     @include('partials.components.cta')
 
-    {{-- <a href="{{ route('comics.index') }}">Back to overview</a> --}}
-
     <form action="{{ route('comics.store') }}" method="post">
         @csrf
 
@@ -41,9 +39,7 @@
                 <textarea name="description" id="description" rows="10"></textarea>
             </div>
         
-            <div class="input-field-area">
-                <input class="btn submit" type="submit" value="Send">
-            </div>
+            @include('partials.components.formBtns')
 
         </div>
 

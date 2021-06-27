@@ -44,9 +44,7 @@
 
         </div>
 
-        <div class="input-field-area">
-            <input class="btn submit" type="submit" value="Save">
-        </div>
+        @include('partials.components.formBtns')
     
     </form>
 
