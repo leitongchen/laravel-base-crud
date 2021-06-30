@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use App\Comic;
-
+use Faker\Generator as Faker;
 class ComicsTableSeeder extends Seeder
 {
     /**
@@ -11,7 +11,7 @@ class ComicsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         Comic::truncate();
         
@@ -35,6 +35,8 @@ class ComicsTableSeeder extends Seeder
             $comicNew->fill($comic);
 
             $comicNew->price = $comicPrice;
+            $comicNew->sale_date = $faker->date();
+
 
             $comicNew->save(); 
 
