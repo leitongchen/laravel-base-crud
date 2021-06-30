@@ -3,7 +3,11 @@
 @section('page_title', 'Create new')
 
 @section('content')
-    @include('partials.components.cta')
+    
+    <div class="cta-upper">
+        <a class="link" href="{{ route('comics.index') }}">Back to overview</a>
+    </div>
+
 
     @include("partials.components.errorsAlert")
 
